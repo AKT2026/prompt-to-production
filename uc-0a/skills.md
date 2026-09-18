@@ -11,7 +11,7 @@ skills:
     output: >
       A dictionary containing complaint_id, category, priority, reason, and flag.
     error_handling: >
-      If the description is missing or invalid, return category Other,
+      If the complaint description is missing or invalid, return category Other,
       priority Standard, a reason stating that the description is unavailable,
       and flag NEEDS_REVIEW. Never invent missing information.
 
@@ -20,11 +20,11 @@ skills:
       Read a complaint CSV, apply classify_complaint to every row, and write
       the resulting classifications to an output CSV.
     input: >
-      Input CSV path containing citizen complaint rows and an output CSV path.
+      An input CSV path and an output CSV path.
     output: >
-      CSV containing complaint_id, category, priority, reason, and flag for
+      A CSV containing complaint_id, category, priority, reason, and flag for
       every input row.
     error_handling: >
       Process rows independently so one malformed row does not stop the batch.
-      Invalid or ambiguous rows must be represented in the output and flagged
+      Invalid or ambiguous rows must still appear in the output and be flagged
       for review where appropriate.
